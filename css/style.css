@@ -3,6 +3,6 @@ body{
     padding:0;
     background-image: url("../imgs/Illustration.png");
     background-repeat: no-repeat;
-    background-size: 100% 50%;
+    background-size: 100% auto;
     background-position:bottom;
 }
