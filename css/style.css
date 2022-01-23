@@ -1,8 +1,30 @@
+@font-face {
+    font-family: 'circular_std';
+    src: url('../fonts/circular_std.ttf') format('truetype');
+}
+
 body{
     margin:0;
     padding:0;
+    width:100%;
     background-image: url("../imgs/Illustration.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position:bottom;
+}
+.circular{
+    font-family: 'circular_std';
+}
+.getStarted{
+    position:absolute;
+    top:140px;
+    right:4px;
+    width:331px;
+    height:204px;
+}
+h1{
+    font-size:60px;
+    font-weight:450;
+    color:#1E1C61;
+    line-height: 38px;
 }

@@ -1,0 +1,27 @@
+.flex{
+    display:flex;
+}
+.row{
+    flex-direction: row;
+}
+.column{
+    flex-direction:column;
+}
+.justify_center{
+    justify-content: center;
+}
+.align_center{
+    align-items: center;
+}
+.justify_left{
+    justify-content: left;
+}
+.align_left{
+    align-items: left;
+}
+.justify_right{
+    justify-content: right;
+}
+.align_right{
+    align-items: right;
+}
