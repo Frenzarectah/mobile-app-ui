@@ -11,3 +11,12 @@ const checkDevice = (widthN)=>{
         page.appendChild(mex);
     }
 }
+const changePage = ()=>{
+    let page = document.getElementById("body");
+    page.classList.add("fadeOut");
+    setTimeout("location.href='./index1.html'",1000);
+}
+const menuClick = ()=>{
+    let btn = document.getElementsByClassName("menu")[0];
+    btn.classList.toggle("menuClick");
+}
