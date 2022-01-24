@@ -2,6 +2,14 @@
     font-family: 'circular_std';
     src: url('../fonts/circular_std.ttf') format('truetype');
 }
+@media only screen and (min-width:700) and (max-width:1300){
+body{
+    background-image: url("../imgs/nodesk_background.png");
+    background-position: center;
+    background-size:contain;
+}
+}
+@media only screen and (min-width: 250px) and (max-width: 600px){
 
 body{
     margin:0;
@@ -23,8 +31,15 @@ body{
     height:204px;
 }
 h1{
-    font-size:60px;
+    font-size:30px;
     font-weight:450;
     color:#1E1C61;
     line-height: 38px;
+}
+h2{
+    font-size:20px;
+    font-weight:450;
+    color:#1E1C61;
+    line-height:38px;
+}
 }
