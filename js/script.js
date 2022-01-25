@@ -20,3 +20,7 @@ const menuClick = ()=>{
     let btn = document.getElementsByClassName("menu")[0];
     btn.classList.toggle("menuClick");
 }
+const fadeIn = () =>{
+    let page = document.getElementById("body1");
+    page.classList.add("fadeIn");
+}
