@@ -21,6 +21,6 @@ const menuClick = ()=>{
     btn.classList.toggle("menuClick");
 }
 const fadeIn = () =>{
-    let page = document.getElementById("body1");
+    let page = document.getElementsByClassName("body1")[0];
     page.classList.add("fadeIn");
 }
