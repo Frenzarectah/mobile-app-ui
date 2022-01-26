@@ -58,8 +58,8 @@ h1{
     position:absolute;
     width:268px;
     height:81px;
-    top:14%; /*140px*/
-    left:10%;
+    top:14%; 
+    /*left:10%;*/
 }
 .subtitle{
     position:absolute;
@@ -102,6 +102,11 @@ h2{
     opacity:0;
     transition: opacity 500ms;
 }
+.container{
+    margin-left:10%;
+    margin-right:20%;
+    border:3px black solid;
+}
 .fadeOut{
     opacity:0;
 }
@@ -112,11 +117,11 @@ h2{
     position:absolute;
     top:30%;
     left:7%;
-    width:305px;
+    width:87%;
     height:53px;
 }
 .search{
-    width:312px;
+    width:85%;
     height:45px;
     background-color:#f2f2f2;
     border:none;
@@ -125,7 +130,7 @@ h2{
 }
 .searchBtn{
     position:absolute;
-    right:-6%;
+    right:1%;
     width:65px;
     height:53px;
     border-radius:30px;
@@ -133,5 +138,9 @@ h2{
     background-position: center;
     background-repeat: no-repeat;
     background-size:34px 34px;
+}
+.category{
+    position:absolute;
+    top:40%;
 }
 }
