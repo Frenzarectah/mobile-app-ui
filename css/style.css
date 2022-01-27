@@ -39,10 +39,10 @@ body{
     color:#C0C0C0;
 }
 .login{
-    position:absolute;
+    /*position:absolute;
     top:6%;
     left:82%; 
-    right:6%;
+    right:6%;*/
     width:41px;
     height:41px;
     background-color:#534378;
@@ -54,20 +54,24 @@ h1{
     font-weight:450;
     line-height: 38px;
 }
-.title{
-    position:absolute;
-    width:268px;
-    height:81px;
-    top:14%; 
-    /*left:10%;*/
+
+.home_container{
+    margin-top:14%;
+    margin-right:10%;
+    margin-left:10%;
 }
-.subtitle{
-    position:absolute;
-    width:331px;
-    height:60px;
-    top:25%;
-    left:10%;
-}
+    .title{
+        position:absolute;
+        width:268px;
+        height:81px;
+        top:14%; 
+    }
+    .subtitle{
+        position:absolute;
+        width:331px;
+        height:60px;
+        top:25%;
+    }
 .menu{
     position:absolute;
     width:26px;
@@ -95,7 +99,6 @@ h2{
     height:40px;
     margin-top:2%;
     top:34%;
-    left:10%;
     border-radius:20px;
 }
 .body1{
