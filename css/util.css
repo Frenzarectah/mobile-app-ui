@@ -25,3 +25,6 @@
 .align_right{
     align-items: right;
 }
+.justify_between{
+    justify-content:space-between;
+}

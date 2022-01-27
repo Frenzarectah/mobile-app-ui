@@ -13,8 +13,7 @@ const checkDevice = (widthN)=>{
 }
 const changePage = ()=>{
     let page = document.getElementById("body");
-    page.classList.add("fadeOut");
-    setTimeout("location.href='./index1.html'",1000);
+    page.innerHTML="";
 }
 const menuClick = ()=>{
     let btn = document.getElementsByClassName("menu")[0];
