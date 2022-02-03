@@ -1,4 +1,4 @@
-let widthN;
+
 const checkDevice = ()=>{
     if(screen.width>450){
             let emptyPage = document.querySelector(".column");
@@ -17,6 +17,7 @@ else{
     });
 }
 }
+window.onresize = checkDevice();
 const buildPage1 = ()=>{
     let page = document.getElementById("body");
     page.innerHTML="";
