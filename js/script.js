@@ -4,13 +4,20 @@ const checkDevice = (widthN)=>{
             let emptyPage = document.querySelector(".column");
             console.log(emptyPage);
             emptyPage.classList.remove("column");
+            emptyPage.classList.add("circular");
             emptyPage.classList.add("row");
             emptyPage.classList.add("justify_center");
-            emptyPage.innerHTML="PAGINA NON DISPONIBILE PER DESKTOP/TABLET";
-            alert("Quest'app supporta solo i dispositivi mobile, riprova dal cellulare!");
+            emptyPage.innerHTML="PAGINA NON DISPONIBILE PER DESKTOP/TABLET, RIPROVA DAL TUO DISPOSITIVO MOBILE";
+            //alert("Quest'app supporta solo i dispositivi mobile, riprova dal cellulare!");
+}
+else{
+    addEventListener("load",()=>{ 
+        let body = document.getElementsbyTagName(body)[0];
+        body.classList.add("fadeIn");
+    });
 }
 }
-const changePage = ()=>{
+const buildPage1 = ()=>{
     let page = document.getElementById("body");
     page.innerHTML="";
 }

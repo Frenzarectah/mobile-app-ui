@@ -119,9 +119,9 @@ h2{
 .button:hover{
     background-color: #467af9;
 }
-.body1{
+.body{
     opacity:0;
-    transition: opacity 500ms;
+    transition: opacity 1s;
 }
 .fadeOut{
     opacity:0;
