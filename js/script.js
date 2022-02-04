@@ -12,8 +12,8 @@ const checkDevice = (widthN)=>{
 }
 else{
     addEventListener("load",()=>{ 
-        let body = document.getElementsbyTagName(body)[0];
-        body.classList.add("fadeIn");
+        let body = document.getElementById("body");
+        setTimeout(body.classList.add("fadeIn"),1000);
     });
 }
 }

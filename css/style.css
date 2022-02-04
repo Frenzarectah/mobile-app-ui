@@ -17,7 +17,6 @@ body{
     padding:0;
     width:100%;
     background-color:#f9f9f9;
-    transition:opacity 500ms;
 }
 .background{
     width:100%;
@@ -119,9 +118,9 @@ h2{
 .button:hover{
     background-color: #467af9;
 }
-.body{
+#body{
     opacity:0;
-    transition: opacity 1s;
+    transition-property: opacity 1s;
 }
 .fadeOut{
     opacity:0;
