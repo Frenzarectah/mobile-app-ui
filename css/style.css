@@ -61,9 +61,17 @@ h1{
     bottom:50% !important;
     margin-left:65% !important;    
 }
+.mg-lft-40{
+    margin-left:40px;
+}
+.mg-rgt-40{
+    margin-right:40px;
+}
+.mg-top-5{
+    margin-top:6%;
+}
 .home_container{
     margin-top:25%;
-    margin-left:40px;
     margin-right:67px;
 }
     .title{
@@ -75,12 +83,12 @@ h1{
         height:60px;
     }
 .container{
-    position:absolute;
-    top:6%;
+    width:86%;
+    height:40px;
     right:7%;
     left:7%;
-    border:1px black solid;
     justify-content: space-between;
+    background-color:blue;
 }
     .menu{
         width:27px;

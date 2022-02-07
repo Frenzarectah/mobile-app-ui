@@ -1,3 +1,4 @@
+
 const pageAppear = ()=>{
     let body = document.getElementsByTagName("body")[0];
     body.classList.add("fadeIn");
@@ -17,11 +18,15 @@ else{
 }
 }
 
+let div;
+
 const buildPage1 = ()=>{
-    let page = document.getElementById("body");
-    let div = document.createElement(div);
-    div.innerHTML="QUESTA E' LA PAGINA UNO!";
-    page.appendChild(div);
+    let page = document.getElementsByTagName("body")[0];
+    page.innerHTML=`
+                    <div class="row container mg-top-5">
+                    
+                    </div>
+    `
 }
 const menuClick = ()=>{
     let btn = document.getElementsByClassName("menu")[0];
