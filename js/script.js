@@ -22,9 +22,12 @@ let div;
 
 const buildPage1 = ()=>{
     let page = document.getElementsByTagName("body")[0];
+    page.classList.add("column");
+    page.classList.add("align_center");
     page.innerHTML=`
-                    <div class="row container mg-top-5">
-                    
+                    <div class="row mg-lft-25 mg-rgt-25 align_center container mg-top-5">
+                        <div class="menu" onclick="menuClick();"></div>
+                        <div class="login"></div> 
                     </div>
     `
 }
