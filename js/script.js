@@ -11,7 +11,12 @@ const checkDevice = ()=>{
             emptyPage.classList.remove("column");
             emptyPage.classList.add("row");
             emptyPage.classList.add("justify_center");
-            emptyPage.innerHTML="PAGINA NON DISPONIBILE PER DESKTOP/TABLET, RIPROVA DAL TUO DISPOSITIVO MOBILE";
+            emptyPage.classList.add("align_center");
+            emptyPage.innerHTML=`<div class=" circular desktop">
+                                    Sorry but this app is avaialable only<br/> for mobile devices.<br/>
+                                    TRY AGAIN ON YOUR PHONE! :)
+                                </div>
+            `;
 }
 else{
         setTimeout(pageAppear(),1000);
@@ -30,6 +35,25 @@ const buildPage1 = ()=>{
                         <div class="login"></div> 
                     </div>
                     <h1 class="circular mg-lft-25px mg-top-15 blue">Find your Desired Doctor</h1>
+                    <div class="row searchBar mg-lft-25px mg-top-5 align_center">
+                        <input class="search circular greylight" type="search" placeholder="Search for doctors">
+                        <div class="searchBtn orange_bkg"></div></input>
+                    </div>
+                    <div class=" mg-top-5 mg-lft-25px categ column">
+                        <div class="circular blue --16px">Categories</div>
+                        <div class="scroll_menu row">
+                            <div class="cat_card">
+                                <div class="teeth"></div>
+                                <div class="cat_card_content">uno</div>
+                            </div>
+                            <div class="cat_card">
+                                <div class="cat_card_content">due</div>
+                            </div>
+                            <div class="cat_card">
+                                <div class="cat_card_content">tre</div>
+                            </div>
+                        </div>
+                    </div>
     `
 }
 const menuClick = ()=>{
