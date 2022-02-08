@@ -41,16 +41,24 @@ const buildPage1 = ()=>{
                     </div>
                     <div class=" mg-top-5 mg-lft-25px categ column">
                         <div class="circular blue --16px">Categories</div>
-                        <div class="scroll_menu row">
+                        <div class="scroll_menu row mg-top-5">
                             <div class="cat_card">
                                 <div class="teeth"></div>
-                                <div class="cat_card_content">uno</div>
+                                <div class="cat_card_content circular --16px violet">
+                                    <span class="cat_desc">Dental Surgeon</span>
+                                </div>
                             </div>
                             <div class="cat_card">
-                                <div class="cat_card_content">due</div>
+                                <div class="heart"></div>
+                                <div class="cat_card_content circular --16px violet">
+                                    <span class="cat_desc">Heart Surgeon</span>
+                                </div>
                             </div>
                             <div class="cat_card">
-                                <div class="cat_card_content">tre</div>
+                            <div class="eye"></div>
+                                <div class="cat_card_content circular --16px violet">
+                                    <span class="cat_desc">Eye Specialist</span>
+                                </div>
                             </div>
                         </div>
                     </div>
