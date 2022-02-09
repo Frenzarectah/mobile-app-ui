@@ -43,19 +43,19 @@ const buildPage1 = ()=>{
                         <div class="circular blue --16px">Categories</div>
                         <div class="scroll_menu row mg-top-5">
                             <div class="cat_card">
-                                <div class="teeth"></div>
+                                <div id="teeth" class="cat_btn teeth"></div>
                                 <div class="cat_card_content circular --16px violet">
                                     <span class="cat_desc">Dental Surgeon</span>
                                 </div>
                             </div>
                             <div class="cat_card">
-                                <div class="heart"></div>
+                                <div id="heart" class="cat_btn heart"></div>
                                 <div class="cat_card_content circular --16px violet">
                                     <span class="cat_desc">Heart Surgeon</span>
                                 </div>
                             </div>
                             <div class="cat_card">
-                            <div class="eye"></div>
+                            <div id="eye" class="cat_btn eye"></div>
                                 <div class="cat_card_content circular --16px violet">
                                     <span class="cat_desc">Eye Specialist</span>
                                 </div>
@@ -63,8 +63,20 @@ const buildPage1 = ()=>{
                         </div>
                     </div>
     `
+    addingEvent();
 }
 const menuClick = ()=>{
     let btn = document.getElementsByClassName("menu")[0];
     btn.classList.toggle("menuClick");
+}
+const addingEvent=()=>{
+    let cat_btns = document.getElementsByClassName("cat_btn");
+    let type = ["tooth","heart","eye"];
+    for (let item of cat_btns){
+        item.addEventListener("click",()=>displayCat([item.id]));
+    }
+}
+const displayCat = (specialization) =>{
+    let spec = specialization.toString();
+    console.log(spec);
 }
