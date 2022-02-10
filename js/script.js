@@ -1,3 +1,9 @@
+const doctors = [
+    {name:"Dr.Stella Kane",cat:"heart",hospital:"Flower Hospitals"},
+    {name:"Joseph Cart",cat:"tooth",hospital:"Flower Hospitals"},
+    {name:"Stefani Albert",cat:"heart",hospital:"Flower Hospitals"}
+];
+
 
 const pageAppear = ()=>{
     let body = document.getElementsByTagName("body")[0];
@@ -70,13 +76,23 @@ const menuClick = ()=>{
     btn.classList.toggle("menuClick");
 }
 const addingEvent=()=>{
+    let isClicked = false;
+    let spec_list = [];
     let cat_btns = document.getElementsByClassName("cat_btn");
     let type = ["tooth","heart","eye"];
     for (let item of cat_btns){
-        item.addEventListener("click",()=>displayCat([item.id]));
+        item.addEventListener("click",()=>{
+                if (item.classList.contains("deactive")){ 
+                    console.log("è disattivato!");
+                }
+                item.classList.toggle("deactive");
+                spec_list.push(item.id.toString());
+                displayCats(spec_list);
+            });
     }
 }
-const displayCat = (specialization) =>{
-    let spec = specialization.toString();
-    console.log(spec);
+const displayCats = (specializations) =>{ //spec è un array contenente tutte le specializzazioni attive
+    console.log(specializations);
+
+    
 }

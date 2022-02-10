@@ -226,4 +226,8 @@ h2{
     background-repeat:no-repeat;
     z-index:99;
 }
+.deactive{
+    background-image:url('../imgs/minus.png');
+    pointers-event:none;
+}
 }
