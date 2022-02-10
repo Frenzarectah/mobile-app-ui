@@ -104,6 +104,7 @@ const displayCats = (specialization) =>{ //spec è un array contenente tutte le 
 
 const renderDoctor = (docList)=>{
     let doctor_contain = document.querySelector(".doct_container");
+    doctor_contain.innerHTML="";
     for (i=0;i<=docList.length-1;i++){
         let doctor = document.createElement("div");
         doctor.innerHTML=`<div>${docList[i].name}</div>
