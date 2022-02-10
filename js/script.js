@@ -67,6 +67,9 @@ const buildPage1 = ()=>{
                                 </div>
                             </div>
                         </div>
+                        <div class="doct_container">
+                            collocazione medici di categoria
+                        </div>
                     </div>
     `
     addingEvent();
@@ -76,13 +79,12 @@ const menuClick = ()=>{
     btn.classList.toggle("menuClick");
 }
 const addingEvent=()=>{
-    let isClicked = false;
     let spec_list = [];
     let cat_btns = document.getElementsByClassName("cat_btn");
     let type = ["tooth","heart","eye"];
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
-                if (item.classList.contains("deactive")){ 
+                if (item.classList.contains("deactive")){ //qua ci vanno le istruzioni di eliminazione categoria
                     console.log("è disattivato!");
                 }
                 item.classList.toggle("deactive");
