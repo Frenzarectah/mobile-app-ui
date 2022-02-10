@@ -69,7 +69,6 @@ const buildPage1 = ()=>{
                             </div>
                         </div>
                         <div class="doct_container">
-                            collocazione medici di categoria
                         </div>
                     </div>
     `
@@ -100,6 +99,17 @@ const addingEvent=()=>{
 const displayCats = (specialization) =>{ //spec è un array contenente tutte le specializzazioni attive
     doc = doctors.filter(doc => doc.cat == specialization);
     console.log(doc);
+    renderDoctor(doc);
+}
+
+const renderDoctor = (docList)=>{
+    let doctor_contain = document.querySelector(".doct_container");
+    for (i=0;i<=docList.length-1;i++){
+        let doctor = document.createElement("div");
+        doctor.innerHTML=`<div>${docList[i].name}</div>
+                          <div>${docList[i].hospital}</div>`;
+        doctor_contain.append(doctor);
+    }
 }
 
 
