@@ -1,7 +1,8 @@
 const doctors = [
     {name:"Dr.Stella Kane",cat:"heart",hospital:"Flower Hospitals"},
-    {name:"Joseph Cart",cat:"tooth",hospital:"Flower Hospitals"},
-    {name:"Stefani Albert",cat:"heart",hospital:"Flower Hospitals"}
+    {name:"Joseph Cart",cat:"teeth",hospital:"Flower Hospitals"},
+    {name:"Stefani Albert",cat:"heart",hospital:"Flower Hospitals"},
+    {name:"Joshua Jackson",cat:"eye",hospital:"Mercy General"}
 ];
 
 
@@ -85,16 +86,20 @@ const addingEvent=()=>{
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
                 if (item.classList.contains("deactive")){ //qua ci vanno le istruzioni di eliminazione categoria
-                    console.log("è disattivato!");
+                    spec_list.splice(spec_list.length-1,1);
+                    console.log("array con splice: "+spec_list)
+                    displayCats(spec_list);
                 }
                 item.classList.toggle("deactive");
-                spec_list.push(item.id.toString());
-                displayCats(spec_list);
+                //spec_list.push(item.id.toString());
+                displayCats(item.id);
+                console.log(item.id);
             });
     }
 }
-const displayCats = (specializations) =>{ //spec è un array contenente tutte le specializzazioni attive
-    console.log(specializations);
-
-    
+const displayCats = (specialization) =>{ //spec è un array contenente tutte le specializzazioni attive
+    doc = doctors.filter(doc => doc.cat == specialization);
+    console.log(doc);
 }
+
+
