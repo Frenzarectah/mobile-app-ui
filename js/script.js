@@ -73,6 +73,7 @@ const buildPage1 = ()=>{
                         </div>
                     </div>
                     `
+    displayAll();
     addingEvent();
 }
 const menuClick = ()=>{
@@ -87,17 +88,17 @@ const addingEvent=()=>{
                     delCats(item.id);
                     item.classList.toggle("deactive");
                 }else{
-                    displayCats(item.id);
+                    //displayCats(item.id);
                     console.log(item.id);
                     item.classList.toggle("deactive");
                 }
             });
     }
 }
-/*const displayAll = ()=>{ 
-    doc = doctors.filter(doc => doc.cat == "heart");
-    renderDoctor(doc);
-}*/
+const displayAll = ()=>{ 
+    //doc = doctors.filter(doc => doc.cat == "eye");
+    renderDoctor(doctors);
+}
 const displayCats = (specialization) =>{ //spec è un array contenente tutte le specializzazioni attive
     doc = doctors.filter(doc => doc.cat == specialization);
     console.log(doc);
