@@ -82,23 +82,26 @@ const menuClick = ()=>{
 }
 const addingEvent=()=>{
     let cat_btns = document.getElementsByClassName("cat_btn");
-    let dept = ["teeth","heart","eye"];
+    let dept = [];
+    let delCat;
     let i = 0;
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
                 if (item.classList.contains("deactive")){
-                    dept.pop(item.id);
+                    idx = dept.indexOf(item.id);
+                    delCat = dept.splice(idx,1);
+                    dept = dept.filter(item=>item !=delCat);
                     item.classList.toggle("deactive");
                     displayCats(dept);
                     console.log("dept al secondo click: "+dept);
                 }else{
-                    indx = dept.indexOf(item.id);
-                    dept.splice(indx,1);
+                    dept.push(item.id);
                     item.classList.toggle("deactive");
                     displayCats(dept);
                     console.log("dept al primo click: "+dept);
+        }if(dept.length==0){ renderDoctor(doctors);
         }
-    });
+        });
 }
 }
 const displayCats = (specializations) =>{ //spec è un array contenente tutte le specializzazioni attive
@@ -109,12 +112,6 @@ const displayCats = (specializations) =>{ //spec è un array contenente tutte le
         renderDoctor(doc);
     }
 }
-const activeCats = (specialization) =>{
-    let doctor_contain = document.querySelector(".doct_container");
-    doctor_contain.innerHTML="";
-    displayCats(specialization);
-}
-
 const renderDoctor = (docList)=>{
     let doctor_contain = document.querySelector(".doct_container");
     for (i=0;i<=docList.length-1;i++){
