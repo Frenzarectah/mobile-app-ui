@@ -82,32 +82,32 @@ const menuClick = ()=>{
 }
 const addingEvent=()=>{
     let cat_btns = document.getElementsByClassName("cat_btn");
-    let dept = [];
+    let dept = ["teeth","heart","eye"];
     let i = 0;
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
                 if (item.classList.contains("deactive")){
-                    let indx = dept.indexOf(item.id);
-                    dept.splice(indx,1);
-                    dept = dept.filter(item => item!=" ");
-                    renderDoctor(doctors);
+                    dept.pop(item.id);
                     item.classList.toggle("deactive");
-                    console.log(dept);
+                    displayCats(dept);
+                    console.log("dept al secondo click: "+dept);
                 }else{
-                    dept[i] = item.id;
-                    activeCats(item.id);
+                    indx = dept.indexOf(item.id);
+                    dept.splice(indx,1);
                     item.classList.toggle("deactive");
-                    i++;
-                    dept = dept.filter(item => item!=" ");
-                    console.log(dept);
+                    displayCats(dept);
+                    console.log("dept al primo click: "+dept);
         }
     });
 }
 }
-const displayCats = (specialization) =>{ //spec è un array contenente tutte le specializzazioni attive
-    doc = doctors.filter(doc => doc.cat == specialization); //lo tengo solo perchè mi sono divertito
-    console.log(doc);
-    renderDoctor(doc);
+const displayCats = (specializations) =>{ //spec è un array contenente tutte le specializzazioni attive
+    let doctor_contain = document.querySelector(".doct_container");
+    doctor_contain.innerHTML="";
+    for (item of specializations){ 
+        doc = doctors.filter(doc => doc.cat == item); 
+        renderDoctor(doc);
+    }
 }
 const activeCats = (specialization) =>{
     let doctor_contain = document.querySelector(".doct_container");
@@ -122,7 +122,7 @@ const renderDoctor = (docList)=>{
         doctor.classList.add(docList[i].cat);
         doctor.innerHTML=`<div class='${docList[i].cat}'>
                             <div>${docList[i].name}</div>
-                            <div>${docList[i].hospital}</div>
+                            <div>${docList[i].cat}</div>
                           </div>`;
         doctor_contain.append(doctor);
     }
