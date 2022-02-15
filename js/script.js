@@ -2,6 +2,7 @@ const spec = ["heart","eye","teeth"];
 const doctors = [
     //first doc obj
     {name:"Dr.Stella Kane",
+    id:"1",
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
@@ -9,6 +10,7 @@ const doctors = [
     icon:"./imgs/female_icon.png"},
     //second doc obj
     {name:"Joseph Cart",
+    id:"2",
     cat:"teeth",
     hospital:"Flower Hospitals",
     dept:"Dental Surgeon",
@@ -16,6 +18,7 @@ const doctors = [
     icon:"./imgs/male_icon.png"},
     //third doc obj
     {name:"Stefani Albert",
+    id:"3",
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
@@ -23,10 +26,12 @@ const doctors = [
     icon:"./imgs/female_icon1.png"},
     //fourth doc obj
     {name:"Joshua Jackson",
+    id:"4",
     cat:"eye",
     hospital:"Mercy General",
     dept:"Ocular Surgeon",
-    bio:"You can't wait to see him"}
+    bio:"You can't wait to see him",
+    icon:"./imgs/male_icon1.png",}
 ];
 
 
@@ -118,12 +123,10 @@ const addingEvent=()=>{
                     dept = dept.filter(item=>item !=delCat);
                     item.classList.toggle("deactive");
                     displayCats(dept);
-                    console.log("dept al secondo click: "+dept);
                 }else{
                     dept.push(item.id);
                     item.classList.toggle("deactive");
                     displayCats(dept);
-                    console.log("dept al primo click: "+dept);
         }if(dept.length==0){ renderDoctor(doctors);
         }
         });
@@ -143,15 +146,18 @@ const renderDoctor = (docList)=>{
         let doctor = document.createElement("div");
         doctor.classList.add(docList[i].cat);
         doctor.classList.add("list");
-        doctor.innerHTML=`<div class='${docList[i].cat} row mg-lft-25px'>
+        doctor.innerHTML=`<a href="renderPage(${docList[i].id})"><div class='${docList[i].cat} row mg-lft-25px'>
                             <img src="${docList[i].icon}" class="mg-rgt-25px">
                             <div class="column circular justify_center">
                                 <div class="--16px blue">${docList[i].name}</div>
-                                <div class="--14px blue">${docList[i].dept}" "${docList[i].hospital}</div>
+                                <div class="--14px blue --norm">${docList[i].dept} - ${docList[i].hospital}</div>
                             </div>
-                          </div>`;
+                          </div></a>`;
         doctor_contain.append(doctor);
     }
+}
+const renderPage=(Id)=>{
+        
 }
 
 

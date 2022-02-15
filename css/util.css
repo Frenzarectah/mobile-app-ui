@@ -28,9 +28,16 @@
 .justify_between{
     justify-content:space-between;
 }
+.justify_even{
+    justify-content: space-evenly;
+}
 .--16px{
     font-size:16px;
 }
 .--14px{
     font-size:14px;
+}
+.--norm{
+    font-size: small;
+    color: rgba(30,28,97,0.65);
 }
