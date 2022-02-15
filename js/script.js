@@ -1,9 +1,32 @@
 const spec = ["heart","eye","teeth"];
 const doctors = [
-    {name:"Dr.Stella Kane",cat:"heart",hospital:"Flower Hospitals"},
-    {name:"Joseph Cart",cat:"teeth",hospital:"Flower Hospitals"},
-    {name:"Stefani Albert",cat:"heart",hospital:"Flower Hospitals"},
-    {name:"Joshua Jackson",cat:"eye",hospital:"Mercy General"}
+    //first doc obj
+    {name:"Dr.Stella Kane",
+    cat:"heart",
+    hospital:"Flower Hospitals",
+    dept:"Heart Surgeon",
+    bio:"Dr.Stella is the top most heart surgeon in Flower Hospital.",
+    icon:"./imgs/female_icon.png"},
+    //second doc obj
+    {name:"Joseph Cart",
+    cat:"teeth",
+    hospital:"Flower Hospitals",
+    dept:"Dental Surgeon",
+    bio:"The top of alla dentists in Florida",
+    icon:"./imgs/male_icon.png"},
+    //third doc obj
+    {name:"Stefani Albert",
+    cat:"heart",
+    hospital:"Flower Hospitals",
+    dept:"Heart Surgeon",
+    bio:"The second best doctor in the country",
+    icon:"./imgs/female_icon1.png"},
+    //fourth doc obj
+    {name:"Joshua Jackson",
+    cat:"eye",
+    hospital:"Mercy General",
+    dept:"Ocular Surgeon",
+    bio:"You can't wait to see him"}
 ];
 
 
@@ -69,7 +92,9 @@ const buildPage1 = ()=>{
                                 </div>
                             </div>
                         </div>
-                        <div class="doct_container">
+                        <div class="circular blue --16px">Top Doctors</div>
+                        <div class="mg-top-5 doct_container mg-rgt-25px">
+                        
                         </div>
                     </div>
                     `
@@ -117,9 +142,13 @@ const renderDoctor = (docList)=>{
     for (i=0;i<=docList.length-1;i++){
         let doctor = document.createElement("div");
         doctor.classList.add(docList[i].cat);
-        doctor.innerHTML=`<div class='${docList[i].cat}'>
-                            <div>${docList[i].name}</div>
-                            <div>${docList[i].cat}</div>
+        doctor.classList.add("list");
+        doctor.innerHTML=`<div class='${docList[i].cat} row mg-lft-25px'>
+                            <img src="${docList[i].icon}" class="mg-rgt-25px">
+                            <div class="column circular justify_center">
+                                <div class="--16px blue">${docList[i].name}</div>
+                                <div class="--14px blue">${docList[i].dept}" "${docList[i].hospital}</div>
+                            </div>
                           </div>`;
         doctor_contain.append(doctor);
     }
