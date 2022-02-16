@@ -92,8 +92,8 @@ const buildPage1 = ()=>{
                     </div>
                     <h1 class="circular mg-lft-25px mg-top-15 blue">Find your Desired Doctor</h1>
                     <div class="row searchBar mg-lft-25px mg-top-5 align_center">
-                        <input class="search circular greylight" type="search" placeholder="Search for doctors">
-                        <div class="searchBtn orange_bkg"></div></input>
+                        <input id="search"class="search circular greylight" type="search" placeholder="Search for doctors">
+                        <div class="searchBtn orange_bkg" onclick="searchDoc(document.querySelector('#search').value)"></div></input>
                     </div>
                     <div class=" mg-top-5 mg-lft-25px categ column">
                         <div class="circular blue --16px">Categories</div>
@@ -175,6 +175,13 @@ const renderDoctor = (docList)=>{
                           </div></a>`;
         doctor_contain.append(doctor);
     }
+}
+const searchDoc=(string)=>{
+    let doctor_contain = document.querySelector(".doct_container");
+    doctor_contain.innerHTML="";
+    let doc = doctors.filter(item=> ((item.name).includes(string))==true);
+    console.log(doc);
+    renderDoctor(doc);
 }
 const renderPage=(Id)=>{
     let page = document.getElementsByTagName("body")[0];
