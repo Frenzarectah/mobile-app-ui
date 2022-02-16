@@ -8,11 +8,19 @@ const doctors = [
     dept:"Heart Surgeon",
     bio:"Dr.Stella is the top most heart surgeon in Flower Hospital.",
     icon:"./imgs/female_icon.png",
-    agenda:{
-            type:"consultant",
-            day:"12",
-            month:"Jan",
-            time:"Sunday. 9am - 11am"}
+    agenda:[{
+        type:"Consultant",
+        day:"12",
+        month:"Jan",
+        time:"Monday. 09am - 11am"
+    },
+    {
+        type:"visit in studio",
+        day:"24",
+        month:"Jun",
+        time:"Wednesday. 09am - 11am"
+    }
+    ]
 },
     //second doc obj
     {name:"Joseph Cart",
@@ -26,7 +34,7 @@ const doctors = [
         type:"consultant",
         day:"12",
         month:"Jan",
-        time:"9am - 11am"}
+        time:"9am - 11am"},
 },
     //third doc obj
     {name:"Stefani Albert",
@@ -199,26 +207,26 @@ const renderPage=(Id)=>{
                 ${doctors[Id].bio}
             </div>
             <div class="--18px blue mg-top-20px">Upcoming Schedules</div>
-            <div class="appoint_container>
+            <div class="appoint_container">
             </div>
         </div>
     </div>
     `
-    console.log(doctors[Id].agenda);
     renderAppoint(Id);
 }
 const renderAppoint = (Id)=>{
     let container = document.getElementsByClassName("appoint_container")[0];
-    for(i=0;i<=doctors[Id].agenda;i++){
-        container.innerHTML=`
+    let counter = Object.keys(doctors[Id].agenda).length-1;
+    for(i=0;i<=counter;i++){
+        container.innerHTML+=`
             <div class="list row">
                 <div class="appoint_box mg-lft-15px column justify_center align_center bluelight">
-                <div class="--24px">${doctors[Id].agenda.day}</div>
-                <div class="--norm">${doctors[Id].agenda.month}</div>
+                <div class="--24px">${doctors[Id].agenda[i].day}</div>
+                <div class="--norm">${doctors[Id].agenda[i].month}</div>
             </div>
             <div class="column mg-lft-15px justify_center">
-                <div class="--16px">${doctors[Id].agenda.type}</div>
-                <div class="--norm">${doctors[Id].agenda.time}</div>
+                <div class="--16px">${doctors[Id].agenda[i].type}</div>
+                <div class="--norm">${doctors[Id].agenda[i].time}</div>
             </div>
         </div>
         `
