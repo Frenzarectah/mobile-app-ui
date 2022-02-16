@@ -13,6 +13,7 @@
 .align_center{
     align-items: center;
 }
+
 .justify_left{
     justify-content: left;
 }
@@ -30,6 +31,9 @@
 }
 .justify_even{
     justify-content: space-evenly;
+}
+.--24px{
+    font-size:24px;
 }
 .--16px{
     font-size:16px;

@@ -69,11 +69,20 @@ h1{
 .mg-rgt-25px{
     margin-right:25px;
 }
+.mg-lft-15px{
+    margin-left:15px;
+}
 .mg-lft-40px{
     margin-left:40px;
 }
 .mg-rgt-40px{
     margin-right:40px;
+}
+.mg-top-10px{
+    margin-top:10px;
+}
+.mg-top-20px{
+    margin-top:20px;
 }
 .mg-top-5{
     margin-top:6%;
@@ -275,5 +284,11 @@ img.bar{
     border-radius:35px 35px 0 0;
     margin-top: 250px;
     z-index:5;
+}
+.appoint_box{
+    width:58px;
+    height:58px;
+    background-color:#D8E3FF;
+    border-radius:7px;
 }
 }

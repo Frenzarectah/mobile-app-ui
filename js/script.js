@@ -2,23 +2,35 @@ const spec = ["heart","eye","teeth"];
 const doctors = [
     //first doc obj
     {name:"Dr.Stella Kane",
-    id:"1",
+    id:"0",
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
     bio:"Dr.Stella is the top most heart surgeon in Flower Hospital.",
-    icon:"./imgs/female_icon.png"},
+    icon:"./imgs/female_icon.png",
+    agenda:{
+            type:"consultant",
+            day:"12",
+            month:"Jan",
+            time:"Sunday. 9am - 11am"}
+},
     //second doc obj
     {name:"Joseph Cart",
-    id:"2",
+    id:"1",
     cat:"teeth",
     hospital:"Flower Hospitals",
     dept:"Dental Surgeon",
     bio:"The top of alla dentists in Florida",
-    icon:"./imgs/male_icon.png"},
+    icon:"./imgs/male_icon.png",
+    agenda:{
+        type:"consultant",
+        day:"12",
+        month:"Jan",
+        time:"9am - 11am"}
+},
     //third doc obj
     {name:"Stefani Albert",
-    id:"3",
+    id:"2",
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
@@ -26,7 +38,7 @@ const doctors = [
     icon:"./imgs/female_icon1.png"},
     //fourth doc obj
     {name:"Joshua Jackson",
-    id:"4",
+    id:"3",
     cat:"eye",
     hospital:"Mercy General",
     dept:"Ocular Surgeon",
@@ -146,7 +158,7 @@ const renderDoctor = (docList)=>{
         let doctor = document.createElement("div");
         doctor.classList.add(docList[i].cat);
         doctor.classList.add("list");
-        doctor.innerHTML=`<a href="renderPage(${docList[i].id})"><div class='${docList[i].cat} row mg-lft-25px'>
+        doctor.innerHTML=`<a onclick="renderPage(${docList[i].id})"><div class='${docList[i].cat} row mg-lft-25px'>
                             <img src="${docList[i].icon}" class="mg-rgt-25px">
                             <div class="column circular justify_center">
                                 <div class="--16px blue">${docList[i].name}</div>
@@ -157,7 +169,60 @@ const renderDoctor = (docList)=>{
     }
 }
 const renderPage=(Id)=>{
-        
+    let page = document.getElementsByTagName("body")[0];
+    page.innerHTML=`
+    <body onload="checkDevice()">
+    <div class="pag">
+        <div class="background_1">
+            <div class="row mg-top-5 mg-lft-25px mg-rgt-25px justify_between">
+                <img src="./imgs/arrow.png" onclick="buildPage1()"><img src="./imgs/threepoint.png">
+            </div>
+    </div>
+    <div class="page2">
+        <div class="container_2 mg-top-5 mg-rgt-25px mg-lft-25px">
+            <div class="row align_center circular">
+                <img style="width:88px; height:auto" src="${doctors[Id].icon}">
+                <div class="mg-lft-25px column justify_round">
+                    <div class="--18px blue">${doctors[Id].name}</div>
+                    <div class="--norm mg-top-10px">${doctors[Id].dept} - ${doctors[Id].hospital}</div>
+                    <div style="width:130px"class="mg-top-10px row justify_between">
+                        <a href="tel:12345567"><img src="./imgs/phone.png"></a>
+                        <a href="mailto:stellakane@findoctor.com"><img src="./imgs/chat.png"></a>
+                        <a href="skype:stellakane@skype.com"><img src="./imgs/video.png"></a>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="mg-top-20px mg-lft-25px mg-rgt-25px circular">
+            <div class="--18px blue">About Doctor</div>
+            <div style="line-height: 22px" class= "--norm">
+                ${doctors[Id].bio}
+            </div>
+            <div class="--18px blue mg-top-20px">Upcoming Schedules</div>
+            <div class="appoint_container>
+            </div>
+        </div>
+    </div>
+    `
+    console.log(doctors[Id].agenda);
+    renderAppoint(Id);
+}
+const renderAppoint = (Id)=>{
+    let container = document.getElementsByClassName("appoint_container")[0];
+    for(i=0;i<=doctors[Id].agenda;i++){
+        container.innerHTML=`
+            <div class="list row">
+                <div class="appoint_box mg-lft-15px column justify_center align_center bluelight">
+                <div class="--24px">${doctors[Id].agenda.day}</div>
+                <div class="--norm">${doctors[Id].agenda.month}</div>
+            </div>
+            <div class="column mg-lft-15px justify_center">
+                <div class="--16px">${doctors[Id].agenda.type}</div>
+                <div class="--norm">${doctors[Id].agenda.time}</div>
+            </div>
+        </div>
+        `
+    }
 }
 
 
