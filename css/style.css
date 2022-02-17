@@ -108,7 +108,7 @@ h2{
     opacity:1;
 }
 .searchBar{
-    width:87%;
+    width:90%;
     height:53px;
 }
 .search{
@@ -120,6 +120,7 @@ h2{
     padding:24px;
 }
 .searchBtn{
+    margin-left:-25px;
     width:65px;
     height:53px;
     border-radius:30px;

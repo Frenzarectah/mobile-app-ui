@@ -6,7 +6,7 @@ const doctors = [
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
-    bio:"Dr.Stella is the top most heart surgeon in Flower Hospital.",
+    bio:"Dr.Stella is the top most heart surgeon in Flower Hospital. She attended a specialistic course with the famous Dr.House and his colleague Dr.Wilson",
     icon:"./imgs/female_icon.png",
     agenda:[{
         type:"Consultant",
@@ -15,7 +15,7 @@ const doctors = [
         time:"Monday. 09am - 11am"
     },
     {
-        type:"visit in studio",
+        type:"Visit in Studio",
         day:"24",
         month:"Jun",
         time:"Wednesday. 09am - 11am"
@@ -28,7 +28,7 @@ const doctors = [
     cat:"teeth",
     hospital:"Flower Hospitals",
     dept:"Dental Surgeon",
-    bio:"The top of alla dentists in Florida",
+    bio:"Our staff' best Dentist, he is able to take all your teeth out of your mounth and you still want to smile at him",
     icon:"./imgs/male_icon.png",
     agenda:{
         type:"consultant",
@@ -42,7 +42,7 @@ const doctors = [
     cat:"heart",
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
-    bio:"The second best doctor in the country",
+    bio:"The second best heart specialist in our Staff, but only because she is younger than Dr.Stella",
     icon:"./imgs/female_icon1.png"},
     //fourth doc obj
     {name:"Joshua Jackson",
@@ -57,7 +57,7 @@ const doctors = [
 //FUNCTION THAT CREATE THE EASE-IN EFFECT ON LOAD
 const pageAppear = ()=>{
     let body = document.getElementsByTagName("body")[0];
-    body.classList.add("fadeIn");
+    body.classList.contains("fadeIn")?body.classList.replace("fadeIn","fadeOut"):body.classList.add("fadeIn");
 }
 //FUNCTION THAT PROVIDE THE CHECKING OF THE DEVICE IN  USE
 const checkDevice = ()=>{
@@ -75,7 +75,7 @@ const checkDevice = ()=>{
             `;
 }
 else{
-        setTimeout(pageAppear(),1000);
+        pageAppear();
 }
 }
 
@@ -83,6 +83,7 @@ let div;
 //FUNCTION THAT RENDERS THE FIRST PAGE OF THE APPLICATION IN JS
 const buildPage1 = ()=>{
     let page = document.getElementsByTagName("body")[0];
+    page.onload(checkDevice());
     page.classList.add("column");
     page.innerHTML=`
                     <div class="row mg-lft-25px mg-rgt-25px container mg-top-5">
@@ -197,10 +198,10 @@ const searchDoc=(string)=>{
                     <img class="mg-lft-15px" src="./imgs/retry.png" onclick="buildPage1()">`
     doc.length!=0?renderDoctor(doc):doctor_contain.append(div);
 }
-//THIS IS THE RENDERING FUNCT OF THE LAST PAGE LINED-UP TO THE DOCTOR SELECTED.
+//THIS IS THE RENDERING FUNCT OF THE LAST PAGE LINED-UP TO THE DOCTOR SELECTED (identified by Id).
 const renderPage=(Id)=>{
     let page = document.getElementsByTagName("body")[0];
-    setTimeout(pageAppear(),1000);
+    pageAppear();
     page.innerHTML=`
     <body onload="checkDevice()">
     <div class="pag">
