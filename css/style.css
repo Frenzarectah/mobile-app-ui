@@ -27,22 +27,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-.circular{
-    font-family: 'circular_std';
-}
-.blue{
-    color:#1E1C61;
-}
-.violet{
-    color:#292685;
-}
-.bluelight{
-    color:rgba(30, 28, 97, 0.65);
 
-}
-.greylight{
-    color:rgba(192,192,192,1);
-}
 h1{
     width:268px;
     font-size:30px;
@@ -62,33 +47,6 @@ h1{
     position:absolute!important;
     bottom:50% !important;
     margin-left:65% !important;    
-}
-.mg-lft-25px{
-    margin-left:25px;
-}
-.mg-rgt-25px{
-    margin-right:25px;
-}
-.mg-lft-15px{
-    margin-left:15px;
-}
-.mg-lft-40px{
-    margin-left:40px;
-}
-.mg-rgt-40px{
-    margin-right:40px;
-}
-.mg-top-10px{
-    margin-top:10px;
-}
-.mg-top-20px{
-    margin-top:20px;
-}
-.mg-top-5{
-    margin-top:6%;
-}
-.mg-top-15{
-    margin-top:15%;
 }
 .home_container{
     margin-top:25%;
@@ -128,9 +86,6 @@ h2{
     font-size:16px;
     font-weight:450;
     line-height:24px;
-}
-.orange_bkg{
-    background-color:#ef716b;
 }
 .button{
     color:white;

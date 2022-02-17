@@ -1,4 +1,4 @@
-const spec = ["heart","eye","teeth"];
+//SETTING THE OBJECT DOCTORS
 const doctors = [
     //first doc obj
     {name:"Dr.Stella Kane",
@@ -23,7 +23,7 @@ const doctors = [
     ]
 },
     //second doc obj
-    {name:"Joseph Cart",
+    {name:"Dr.Joseph Cart",
     id:"1",
     cat:"teeth",
     hospital:"Flower Hospitals",
@@ -37,7 +37,7 @@ const doctors = [
         time:"9am - 11am"},
 },
     //third doc obj
-    {name:"Stefani Albert",
+    {name:"Dr.Stefani Albert",
     id:"2",
     cat:"heart",
     hospital:"Flower Hospitals",
@@ -54,12 +54,12 @@ const doctors = [
     icon:"./imgs/male_icon1.png",}
 ];
 
-
+//FUNCTION THAT CREATE THE EASE-IN EFFECT ON LOAD
 const pageAppear = ()=>{
     let body = document.getElementsByTagName("body")[0];
     body.classList.add("fadeIn");
 }
-
+//FUNCTION THAT PROVIDE THE CHECKING OF THE DEVICE IN  USE
 const checkDevice = ()=>{
     if(screen.width>450){
             let emptyPage = document.querySelector(".column");
@@ -80,11 +80,10 @@ else{
 }
 
 let div;
-
+//FUNCTION THAT RENDERS THE FIRST PAGE OF THE APPLICATION IN JS
 const buildPage1 = ()=>{
     let page = document.getElementsByTagName("body")[0];
     page.classList.add("column");
-    //page.classList.add("align_center");
     page.innerHTML=`
                     <div class="row mg-lft-25px mg-rgt-25px container mg-top-5">
                         <div class="menu" onclick="menuClick();"></div>
@@ -126,10 +125,14 @@ const buildPage1 = ()=>{
     renderDoctor(doctors);
     addingEvent();
 }
+//CHANGING THE ICON OF THE MENU WHILE CLICKED
 const menuClick = ()=>{
     let btn = document.getElementsByClassName("menu")[0];
     btn.classList.toggle("menuClick");
 }
+//ADDING THE EVENT ONCLICK TO THE THREE CATEGORY BUTTON AND POPULATE
+//OR NOT THE CATEGORIES' ARRAY.
+//INJECTS THE CATEGORIES' ARRAY IN THE FILTER FUNCTION (SHOWN BELOW)
 const addingEvent=()=>{
     let cat_btns = document.getElementsByClassName("cat_btn");
     let dept = [];
@@ -152,7 +155,8 @@ const addingEvent=()=>{
         });
 }
 }
-const displayCats = (specializations) =>{ //spec è un array contenente tutte le specializzazioni attive
+//THIS IS THE FILTER FUNCT THAT DECIDES WHICH CATEGORIES WILL BE RENDERED
+const displayCats = (specializations) =>{ 
     let doctor_contain = document.querySelector(".doct_container");
     doctor_contain.innerHTML="";
     for (item of specializations){ 
@@ -160,6 +164,7 @@ const displayCats = (specializations) =>{ //spec è un array contenente tutte le
         renderDoctor(doc);
     }
 }
+//ADD ALL THE SELECTED CATEGORIES DOCTORS INTO THE DOM
 const renderDoctor = (docList)=>{
     let doctor_contain = document.querySelector(".doct_container");
     for (i=0;i<=docList.length-1;i++){
@@ -176,15 +181,26 @@ const renderDoctor = (docList)=>{
         doctor_contain.append(doctor);
     }
 }
+//FUNCTION WHICH LEAD THE EVENT OF THE SEARCHBAR
 const searchDoc=(string)=>{
     let doctor_contain = document.querySelector(".doct_container");
+    string.toLowerCase();
     doctor_contain.innerHTML="";
-    let doc = doctors.filter(item=> ((item.name).includes(string))==true);
+    let doc = doctors.filter(item=> (((item.name).toLowerCase()).includes(string))==true);
     console.log(doc);
-    renderDoctor(doc);
+    let div = document.createElement("div");
+    div.classList.add("list");
+    div.classList.add("row");
+    div.classList.add("align_center");
+    div.classList.add("justify_center");
+    div.innerHTML=`<span class="circular blue --18px">No results!</span>
+                    <img class="mg-lft-15px" src="./imgs/retry.png" onclick="buildPage1()">`
+    doc.length!=0?renderDoctor(doc):doctor_contain.append(div);
 }
+//THIS IS THE RENDERING FUNCT OF THE LAST PAGE LINED-UP TO THE DOCTOR SELECTED.
 const renderPage=(Id)=>{
     let page = document.getElementsByTagName("body")[0];
+    setTimeout(pageAppear(),1000);
     page.innerHTML=`
     <body onload="checkDevice()">
     <div class="pag">
@@ -221,6 +237,7 @@ const renderPage=(Id)=>{
     `
     renderAppoint(Id);
 }
+//THIS IS THE FUNCT WHICH CARES ABOUT THE RENDERING OF ALL THE APPOINTMENT OF THE SELECTED DOCTOR
 const renderAppoint = (Id)=>{
     let container = document.getElementsByClassName("appoint_container")[0];
     let counter = Object.keys(doctors[Id].agenda).length-1;
