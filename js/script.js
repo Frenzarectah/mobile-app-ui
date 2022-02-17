@@ -30,11 +30,19 @@ const doctors = [
     dept:"Dental Surgeon",
     bio:"Our staff' best Dentist, he is able to take all your teeth out of your mounth and you still want to smile at him",
     icon:"./imgs/male_icon.png",
-    agenda:{
-        type:"consultant",
-        day:"12",
-        month:"Jan",
-        time:"9am - 11am"},
+    agenda:[{
+        type:"Tooth Extraction",
+        day:"11",
+        month:"Feb",
+        time:"Saturday. 10am - 12am"
+    },
+    {
+        type:"Panoramic Visit",
+        day:"24",
+        month:"Jun",
+        time:"Wednesday. 11am - 13am"
+    }
+    ]
 },
     //third doc obj
     {name:"Dr.Stefani Albert",
@@ -43,7 +51,21 @@ const doctors = [
     hospital:"Flower Hospitals",
     dept:"Heart Surgeon",
     bio:"The second best heart specialist in our Staff, but only because she is younger than Dr.Stella",
-    icon:"./imgs/female_icon1.png"},
+    icon:"./imgs/female_icon1.png",
+    agenda:[{
+        type:"Visit on Skype",
+        day:"11",
+        month:"Feb",
+        time:"Saturday. 10am - 12am"
+    },
+    {
+        type:"Visit in Studio",
+        day:"21",
+        month:"Apr",
+        time:"Thursday. 09am - 11am"
+    }
+    ]
+},
     //fourth doc obj
     {name:"Joshua Jackson",
     id:"3",
@@ -57,7 +79,7 @@ const doctors = [
 //FUNCTION THAT CREATE THE EASE-IN EFFECT ON LOAD
 const pageAppear = ()=>{
     let body = document.getElementsByTagName("body")[0];
-    body.classList.contains("fadeIn")?body.classList.replace("fadeIn","fadeOut"):body.classList.add("fadeIn");
+    body.classList.add("fadeIn");
 }
 //FUNCTION THAT PROVIDE THE CHECKING OF THE DEVICE IN  USE
 const checkDevice = ()=>{
@@ -201,7 +223,7 @@ const searchDoc=(string)=>{
 //THIS IS THE RENDERING FUNCT OF THE LAST PAGE LINED-UP TO THE DOCTOR SELECTED (identified by Id).
 const renderPage=(Id)=>{
     let page = document.getElementsByTagName("body")[0];
-    pageAppear();
+    //pageAppear();
     page.innerHTML=`
     <body onload="checkDevice()">
     <div class="pag">
