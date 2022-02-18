@@ -1,7 +1,8 @@
 //SETTING THE OBJECT DOCTORS
 const doctors = [
-    //first doc obj
-    {name:"Dr.Stella Kane",
+    //FIRST DOCTOR    
+    {
+    name:"Dr.Stella Kane",
     id:"0",
     cat:"heart",
     hospital:"Flower Hospitals",
@@ -21,9 +22,10 @@ const doctors = [
         time:"Wednesday. 09am - 11am"
     }
     ]
-},
-    //second doc obj
-    {name:"Dr.Joseph Cart",
+    },
+    //SECOND DOCTOR
+    {
+    name:"Dr.Joseph Cart",
     id:"1",
     cat:"teeth",
     hospital:"Flower Hospitals",
@@ -44,8 +46,9 @@ const doctors = [
     }
     ]
 },
-    //third doc obj
-    {name:"Dr.Stefani Albert",
+    //THIRD DOCTOR
+    {
+    name:"Dr.Stefani Albert",
     id:"2",
     cat:"heart",
     hospital:"Flower Hospitals",
@@ -66,8 +69,9 @@ const doctors = [
     }
     ]
 },
-    //fourth doc obj
-    {name:"Joshua Jackson",
+    //FOURTH DOCTOR
+    {
+    name:"Joshua Jackson",
     id:"3",
     cat:"eye",
     hospital:"Mercy General",
@@ -82,6 +86,7 @@ const pageAppear = ()=>{
     body.classList.add("fadeIn");
 }
 //FUNCTION THAT PROVIDE THE CHECKING OF THE DEVICE IN  USE
+//AND DECIDE WHICH LAYOUT WILL BE LOADED
 const checkDevice = ()=>{
     if(screen.width>450){
             let emptyPage = document.querySelector(".column");
@@ -97,11 +102,9 @@ const checkDevice = ()=>{
             `;
 }
 else{
-        pageAppear();
+        pageAppear(); //THIS FUNCT SETS THE OPACITY OF <BODY> FROM 0 TO 1
+    }
 }
-}
-
-let div;
 //FUNCTION THAT RENDERS THE FIRST PAGE OF THE APPLICATION IN JS
 const buildPage1 = ()=>{
     let page = document.getElementsByTagName("body")[0];
@@ -145,8 +148,8 @@ const buildPage1 = ()=>{
                         </div>
                     </div>
                     `
-    renderDoctor(doctors);
-    addingEvent();
+    renderDoctor(doctors);  //CALLS THIS WHICH PROVIDE THE RENDER OF ALL THE DOC IN THE DB
+    addingEvent();          //ADD THE CLICK EVENTS TO ALL THE CATEGORY MANAGE BUTTON
 }
 //CHANGING THE ICON OF THE MENU WHILE CLICKED
 const menuClick = ()=>{
@@ -158,13 +161,12 @@ const menuClick = ()=>{
 //INJECTS THE CATEGORIES' ARRAY IN THE FILTER FUNCTION (SHOWN BELOW)
 const addingEvent=()=>{
     let cat_btns = document.getElementsByClassName("cat_btn");
-    let dept = [];
-    let delCat;
-    let i = 0;
+    let dept = []; //this is the array which contain all the category selected
+    let delCat;    //this is a support var to filter the right array with only the active categories
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
-                if (item.classList.contains("deactive")){
-                    idx = dept.indexOf(item.id);
+                if (item.classList.contains("deactive")){ //here using the class to achieve the status of the buttons
+                    idx = dept.indexOf(item.id);         
                     delCat = dept.splice(idx,1);
                     dept = dept.filter(item=>item !=delCat);
                     item.classList.toggle("deactive");
@@ -173,18 +175,18 @@ const addingEvent=()=>{
                     dept.push(item.id);
                     item.classList.toggle("deactive");
                     displayCats(dept);
-        }if(dept.length==0){ renderDoctor(doctors);
+        }if(dept.length==0){ renderDoctor(doctors); //if no category is set, show the whole list
         }
         });
 }
 }
-//THIS IS THE FILTER FUNCT THAT DECIDES WHICH CATEGORIES WILL BE RENDERED
+//THIS IS THE FILTER FUNCT THAT "DECIDES" WHICH CATEGORIES WILL BE RENDERED
 const displayCats = (specializations) =>{ 
     let doctor_contain = document.querySelector(".doct_container");
     doctor_contain.innerHTML="";
     for (item of specializations){ 
         doc = doctors.filter(doc => doc.cat == item); 
-        renderDoctor(doc);
+        renderDoctor(doc); //this takes every categories selected (one by one) and renderize them
     }
 }
 //ADD ALL THE SELECTED CATEGORIES DOCTORS INTO THE DOM
@@ -218,7 +220,7 @@ const searchDoc=(string)=>{
     div.classList.add("justify_center");
     div.innerHTML=`<span class="circular blue --18px">No results!</span>
                     <img class="mg-lft-15px" src="./imgs/retry.png" onclick="buildPage1()">`
-    doc.length!=0?renderDoctor(doc):doctor_contain.append(div);
+    doc.length!=0?renderDoctor(doc):doctor_contain.append(div); //if the search produces no results, renders the div above
 }
 //THIS IS THE RENDERING FUNCT OF THE LAST PAGE LINED-UP TO THE DOCTOR SELECTED (identified by Id).
 const renderPage=(Id)=>{
