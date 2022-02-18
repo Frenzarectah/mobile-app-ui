@@ -198,7 +198,7 @@ const renderDoctor = (docList)=>{
                             <img src="${docList[i].icon}" class="mg-rgt-25px">
                             <div class="column circular justify_center">
                                 <div class="--16px blue">${docList[i].name}</div>
-                                <div class="--14px blue --norm">${docList[i].dept} - ${docList[i].hospital}</div>
+                                <div class="--14px blue --sm">${docList[i].dept} - ${docList[i].hospital}</div>
                             </div>
                           </div></a>`;
         doctor_contain.append(doctor);
@@ -238,7 +238,7 @@ const renderPage=(Id)=>{
                 <img style="width:88px; height:auto" src="${doctors[Id].icon}">
                 <div class="mg-lft-25px column justify_round">
                     <div class="--18px blue">${doctors[Id].name}</div>
-                    <div class="--norm mg-top-10px">${doctors[Id].dept} - ${doctors[Id].hospital}</div>
+                    <div class="--sm mg-top-10px">${doctors[Id].dept} - ${doctors[Id].hospital}</div>
                     <div style="width:130px"class="mg-top-10px row justify_between">
                         <a href="tel:12345567"><img src="./imgs/phone.png"></a>
                         <a href="mailto:stellakane@findoctor.com"><img src="./imgs/chat.png"></a>
@@ -249,7 +249,7 @@ const renderPage=(Id)=>{
         </div>
         <div class="mg-top-20px mg-lft-25px mg-rgt-25px circular">
             <div class="--18px blue">About Doctor</div>
-            <div style="line-height: 22px" class= "--norm">
+            <div style="line-height: 22px" class= "--sm">
                 ${doctors[Id].bio}
             </div>
             <div class="--18px blue mg-top-20px">Upcoming Schedules</div>
@@ -269,11 +269,11 @@ const renderAppoint = (Id)=>{
             <div class="list row">
                 <div class="appoint_box mg-lft-15px column justify_center align_center bluelight">
                 <div class="--24px">${doctors[Id].agenda[i].day}</div>
-                <div class="--norm">${doctors[Id].agenda[i].month}</div>
+                <div class="--sm">${doctors[Id].agenda[i].month}</div>
             </div>
             <div class="column mg-lft-15px justify_center">
                 <div class="--16px">${doctors[Id].agenda[i].type}</div>
-                <div class="--norm">${doctors[Id].agenda[i].time}</div>
+                <div class="--sm">${doctors[Id].agenda[i].time}</div>
             </div>
         </div>
         `
