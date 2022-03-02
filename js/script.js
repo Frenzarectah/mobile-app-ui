@@ -176,14 +176,14 @@ const addingEvent=()=>{
                     item.classList.toggle("deactive");
                     displayCats(dept);
         }if(dept.length==0){ renderDoctor(doctors); //if no category is set, show the whole list
-        }
+        }   //spostarla in modo che sia all'inizio del codice, prima del popolamento array.**
         });
 }
 }
 //THIS IS THE FILTER FUNCT THAT "DECIDES" WHICH CATEGORIES WILL BE RENDERED
 const displayCats = (specializations) =>{    //specializations is an array containing the categories to render
-    let doctor_contain = document.querySelector(".doct_container");
-    doctor_contain.innerHTML="";
+    let doctor_contain = document.querySelector(".doct_container"); //aggiungere a script init/oppure script import alla fine del file
+    doctor_contain.innerHTML=""; //spostare su renderdoctor
     for (item of specializations){ 
         doc = doctors.filter(doc => doc.cat == item); 
         renderDoctor(doc); //this takes every categories selected (one by one) and renderize them
