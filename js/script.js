@@ -166,9 +166,9 @@ const addingEvent=()=>{
     for (let item of cat_btns){
         item.addEventListener("click",()=>{
                 if (item.classList.contains("deactive")){ //here using the class to achieve the status of the buttons
-                    idx = dept.indexOf(item.id);         
-                    delCat = dept.splice(idx,1);
-                    dept = dept.filter(item=>item !=delCat);
+                    idx = dept.indexOf(item.id);         //idx contains the index of the id of the button' categories
+                    delCat = dept.splice(idx,1);         //delcat contains the categorie to delete 
+                    dept = dept.filter(item=>item !=delCat); //used to filter the array of active categories
                     item.classList.toggle("deactive");
                     displayCats(dept);
                 }else{
@@ -181,7 +181,7 @@ const addingEvent=()=>{
 }
 }
 //THIS IS THE FILTER FUNCT THAT "DECIDES" WHICH CATEGORIES WILL BE RENDERED
-const displayCats = (specializations) =>{ 
+const displayCats = (specializations) =>{    //specializations is an array containing the categories to render
     let doctor_contain = document.querySelector(".doct_container");
     doctor_contain.innerHTML="";
     for (item of specializations){ 
