@@ -1,8 +1,6 @@
-## WORK IN PROGRESS ##
-Create a Mobile App UI using the attached mockup file.
-===============================
-
-![preview](https://github.com/tomorrowdevs-projects/mobile-app-ui/blob/main/Doctor-Consultation-App-Free-Figma-UI-Kit.jpeg "preview")
+#DOCTOR MANAGEMENT SYSTEM 
+===============================</br>
+#Mockup File: ![preview](https://github.com/tomorrowdevs-projects/mobile-app-ui/blob/main/Doctor-Consultation-App-Free-Figma-UI-Kit.jpeg "preview")
 
 ## Download here the [Figma Mockup](https://github.com/tomorrowdevs-projects/mobile-app-ui/blob/main/DoctorConsultationApp.fig)<br/>
 
